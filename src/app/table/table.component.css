@@ -1,0 +1,8 @@
+table{
+    width: 60vw;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+.mat-column-City,.mat-column-Country,.mat-column-Number,.mat-column-Temp{
+    width: 10%;
+}

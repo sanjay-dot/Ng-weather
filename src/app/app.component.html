@@ -1,0 +1,39 @@
+<div class="container-fluid bg-dark p-3" id="header">
+  <h1 class="text-white text-center" style="font-size: 40px">
+    Weather Application
+  </h1>
+</div>
+
+<div class="m-3" >
+  <button *ngIf="showbutton" mat-raised-button color="primary" (click)="showtable()">Table</button>
+  <button *ngIf="!showbutton" mat-raised-button color="primary" class="ml-1" (click)="showgrid()">Grid</button>
+  <button mat-raised-button color="primary" class="float-right" (click)="Addcity(content)">AddCity</button>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add city</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <form>
+        <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="City"/> 
+        <button type="button" class="btn btn-outline-dark" (click)= "submitHandler()" (click)="modal.close('')">Add</button>
+      </form>
+  </div>
+
+</ng-template> 
+
+<pre>{{ closeResult }}</pre>
+
+<div class="row" *ngIf="!isShown">
+  <div class="col-md-6">
+    <app-table></app-table>
+  </div>
+</div>
+
+<div *ngIf="isShown" class="conatiner-fluid row ml-4">
+<app-grid [sqldata]="database"></app-grid>
+</div>

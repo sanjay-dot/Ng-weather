@@ -1,0 +1,12 @@
+#card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mat-card{
+     width: 12vw;
+    height: 18vh;
+    background: #000;
+    color: whitesmoke;
+}
